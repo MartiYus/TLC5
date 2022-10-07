@@ -1,0 +1,9 @@
+Create and run a jar file:
+1.) create a new directory outside of the course directory
+2.) copy all your compiled .class files into the coresponding directories within the new directory
+3.) create Manifest.txt with the following text inside: Main-Class: course.Hello
+4.) don't forget the Manifest file needs to end with a new line character!
+5.) bundle the contents of the course directory into a jr file using the following command:
+jar cmf Manifest.txt Hello.jar course
+Make sure you're outside the course directory when you run it
+6.)run your jar file: java -jar Hello.jar 
