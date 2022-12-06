@@ -1,0 +1,25 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <p>
+    <label>ISBN</label>
+    <input type="text" id="isbn" name="isbn" required [(ngModel)] = "book.isbn" />
+    </p>
+    <p>
+        <label>Book Title:</label>
+        <input type="text" id="title" name="title" [(ngModel)]="book.title" 
+        required minlength="5" 
+        #title ="ngModel">
+    </p>
+    <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+        <div *ngIf="title.errors!['minlength']">
+            Name must be at least 5 characters long.
+        </div> 
+    </div>
+
+    <p>
+        <label>Book Author:</label>
+        <input type="text" id="author" name="author" [(ngModel)]="book.author" 
+        required minlength="5">
+    </p>
+    
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+</form>
