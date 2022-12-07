@@ -1,0 +1,8 @@
+<div class="bordered">
+  <!-- passing data INTO the first component -->
+<app-comp1 [data] = "firstName"></app-comp1>
+</div>
+<div class= "bordered">
+  <!-- passing data IN and OUT of the second component -->
+<app-comp2 [(firstName)] = "firstName"></app-comp2>
+</div>
