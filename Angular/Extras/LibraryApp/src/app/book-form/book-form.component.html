@@ -1,0 +1,59 @@
+<!-- <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <p>
+    <label>ISBN</label>
+    <input type="text" id="isbn" name="isbn" required [(ngModel)] = "book.isbn" />
+    </p>
+    <p>
+        <label>Book Title:</label>
+        <input type="text" id="title" name="title" [(ngModel)]="book.title" 
+        required minlength="5" 
+        #title ="ngModel">
+    </p>
+    <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+        <div *ngIf="title.errors!['minlength']">
+            Name must be at least 5 characters long.
+        </div> 
+    </div>
+
+    <p>
+        <label>Book Author:</label>
+        <input type="text" id="author" name="author" [(ngModel)]="book.author" 
+        required minlength="5">
+    </p>
+    
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+</form> -->
+<div id="big-div">
+<div class="form-container" >
+
+    <mat-form-field class="field">
+      <input matInput placeholder="ISBN" [(ngModel)]="book.isbn" required minlength="5">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput placeholder="Title" [(ngModel)]="book.title" minlength="10" >
+            <mat-hint>Title needs to be at least 10 characters</mat-hint>
+            <mat-error>Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Author" [(ngModel)]="book.author">
+      </mat-form-field>
+    
+    <mat-form-field>
+        <input matInput placeholder="Description" [(ngModel)]="book.description">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Publisher" [(ngModel)]="book.publisher">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-select placeholder="Category" [(ngModel)]="book.cat">
+        <mat-option *ngFor="let cat of categories" [value]="cat">{{cat.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="accent" (click)="onSubmit()">Submit</button>
+
+</div>
+</div>

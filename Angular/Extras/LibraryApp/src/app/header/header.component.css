@@ -1,0 +1,32 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover, a:active{
+    color: lightgray;
+}
+.navigation-items{
+    list-style-type: none;
+    padding: 15;
+    margin: 0;
+}
+mat-toolbar{
+    border-radius: 3px;
+}
+@media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}
+.inline-block {
+        display: flex;
+        flex-direction: row;
+       
+  }
+li{
+    padding-right: 15px;
+    list-style-type: none;
+}
+ul{
+    padding-left: 15px;;
+}

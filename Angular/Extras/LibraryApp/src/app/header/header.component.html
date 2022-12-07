@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+        <a routerLink="/books">All Books</a>
+    </div>
+    <div class="inline-block">
+        <ul  class="navigation-items" class="inline-block">
+            <li>
+                <a routerLink="/bookDetail">BookDetail</a>
+            </li>
+            <li>
+                <a routerLink="/bookForm">New Book</a>
+            </li>
+        </ul>
+    </div>
+  </mat-toolbar>
